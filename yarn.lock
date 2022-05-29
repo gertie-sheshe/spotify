@@ -322,6 +322,11 @@
   dependencies:
     "is-glob" "^4.0.1"
 
+"hamt_plus@1.0.2":
+  "integrity" "sha512-t2JXKaehnMb9paaYA7J0BX8QQAY8lwfQ9Gjf4pg/mk4krt+cmwmU652HOoWonf+7+EQV97ARPMhhVgU1ra2GhA=="
+  "resolved" "https://registry.npmjs.org/hamt_plus/-/hamt_plus-1.0.2.tgz"
+  "version" "1.0.2"
+
 "has-symbols@^1.0.1":
   "integrity" "sha512-l3LCuF6MgDNwTDKkdYGEihYjt5pRPbEg46rtlmnSPlUbgmB8LOIrKJbYYFBSbnPaJexMKtiPO8hmeRjRz2Td+A=="
   "resolved" "https://registry.npmjs.org/has-symbols/-/has-symbols-1.0.3.tgz"
@@ -652,7 +657,7 @@
     "loose-envify" "^1.1.0"
     "scheduler" "^0.22.0"
 
-"react@^17.0.2 || ^18", "react@^17.0.2 || ^18.0.0-0", "react@^18.1.0", "react@>= 16", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@18.1.0":
+"react@^17.0.2 || ^18", "react@^17.0.2 || ^18.0.0-0", "react@^18.1.0", "react@>= 16", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16.13.1", "react@18.1.0":
   "integrity" "sha512-4oL8ivCz5ZEPyclFQXaNksK3adutVS8l2xzZU0cqEFrE9Sb7fC0EFK5uEk74wIreL1DERyjvsU915j1pcT2uEQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.1.0.tgz"
   "version" "18.1.0"
@@ -674,6 +679,13 @@
   "version" "3.6.0"
   dependencies:
     "picomatch" "^2.2.1"
+
+"recoil@^0.7.3-alpha.2":
+  "integrity" "sha512-8LL4T8Bh7WMA5/ka+420PCenaUFie0457kyxX7cy/gsyRlbIGYpyNkAyU0znCvtHTN2clVYkTjGF6zKJ/DzzJg=="
+  "resolved" "https://registry.npmjs.org/recoil/-/recoil-0.7.3-alpha.2.tgz"
+  "version" "0.7.3-alpha.2"
+  dependencies:
+    "hamt_plus" "1.0.2"
 
 "regenerator-runtime@^0.13.4":
   "integrity" "sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA=="
