@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Center from "../components/Center/Center";
 import SideBar from "../components/SideBar/SideBar";
 
 export default function Home() {
@@ -8,8 +9,10 @@ export default function Home() {
         <title>Create Next App</title>
       </Head>
 
-      <main>
+      <main className="flex">
         <SideBar />
+
+        <Center />
       </main>
     </div>
   );
