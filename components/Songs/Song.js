@@ -1,5 +1,5 @@
 import React from "react";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import { currentTrackIdState, isPlayingState } from "../../atoms/songAtom";
 import useSpotify from "../../hooks/useSpotify";
 import { millisToMinutesAndSeconds } from "../../lib/time";
@@ -10,9 +10,8 @@ function Song({ order, track }) {
   } = track;
 
   const spotifyApi = useSpotify();
-  const [currentTrackId, setCurrentTrackId] =
-    useRecoilState(currentTrackIdState);
-  const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
+  const setCurrentTrackId = useSetRecoilState(currentTrackIdState);
+  const setIsPlaying = useSetRecoilState(isPlayingState);
 
   const playSong = () => {
     setCurrentTrackId(id);

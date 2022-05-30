@@ -1,9 +1,9 @@
 import { useSession, signIn } from "next-auth/react";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import spotifyApi from "../lib/spotify";
 
 function useSpotify() {
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
 
   useEffect(() => {
     if (session) {
