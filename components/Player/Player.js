@@ -42,6 +42,18 @@ function Player() {
     }
   };
 
+  const handlePlayPause = () => {
+    spotifyApi.getMyCurrentPlaybackState().then((data) => {
+      if (data?.body?.is_playing) {
+        spotifyApi.pause();
+        setIsPlaying(false);
+      } else {
+        spotifyApi.play();
+        setIsPlaying(true);
+      }
+    });
+  };
+
   useEffect(() => {
     if (spotifyApi.getAccessToken() && !currentTrackId) {
       fetchCurrentSong();
@@ -72,11 +84,11 @@ function Player() {
         </button>
         {isPlaying ? (
           <button className="button w-10 h-10">
-            <PauseIcon />
+            <PauseIcon onClick={handlePlayPause} />
           </button>
         ) : (
           <button className="button w-10 h-10">
-            <PlayIcon />
+            <PlayIcon onClick={handlePlayPause} />
           </button>
         )}
         <button className="button">
