@@ -13,7 +13,7 @@ function Songs() {
   }
 
   return (
-    <div className="h-screen overflow-y-scroll px-8 flex flex-col space-y-1 pb-28 text-white">
+    <div className="h-screen overflow-y-scroll px-8 flex flex-col space-y-1 pb-40 text-white">
       {playlists.tracks.items.map((track, i) => {
         return <Song key={track.track.id} track={track} order={i} />;
       })}
