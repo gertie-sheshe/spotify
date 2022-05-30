@@ -12,8 +12,11 @@ export async function middleware(req) {
     return NextResponse.next();
   }
 
-  // Redirect to login if unauthorised and requesting unprotected route
+  // Redirect to login if unauthorized and requesting unprotected route
   if (!token && pathname !== "/login") {
-    return NextResponse.redirect("/login");
+    // return NextResponse.redirect("/login");
+    const url = req.nextUrl.clone();
+    url.pathname = "/login";
+    return NextResponse.rewrite(url);
   }
 }
