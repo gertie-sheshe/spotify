@@ -4,7 +4,11 @@ import React from "react";
 function Login({ providers }) {
   return (
     <div className="flex flex-col items-center min-h-screen bg-black w-full justify-center">
-      <img className="w-52 mb-5" src="https://links.papareact.com/9xl" alt="" />
+      <img
+        className="w-52 h-52 mb-5"
+        src="https://links.papareact.com/9xl"
+        alt=""
+      />
       {providers &&
         Object.values(providers).map((provider) => (
           <button
