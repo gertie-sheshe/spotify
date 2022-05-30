@@ -11,9 +11,10 @@ import {
   VolumeUpIcon,
   FastForwardIcon,
 } from "@heroicons/react/solid";
+import { debounce } from "lodash";
 
 import { useSession } from "next-auth/react";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useRecoilState } from "recoil";
 import { currentTrackIdState, isPlayingState } from "../../atoms/songAtom";
 import useSongInfo from "../../hooks/useSongInfo";
@@ -54,6 +55,20 @@ function Player() {
     });
   };
 
+  const debouncedAdjustVolume = useCallback(
+    debounce((volume) => {
+      // check for active device
+      spotifyApi.setVolume(volume).catch((err) => {});
+    }, 500),
+    []
+  );
+
+  useEffect(() => {
+    if (volume > 0 && volume < 100) {
+      debouncedAdjustVolume(volume);
+    }
+  }, [volume]);
+
   useEffect(() => {
     if (spotifyApi.getAccessToken() && !currentTrackId) {
       fetchCurrentSong();
@@ -91,11 +106,28 @@ function Player() {
             <PlayIcon onClick={handlePlayPause} />
           </button>
         )}
-        <button className="button">
+        <button onClick={() => spotifyApi.skipToNext()} className="button">
           <FastForwardIcon />
         </button>
         <button className="button">
           <ReplyIcon />
+        </button>
+      </div>
+
+      <div className="flex items-center space-x-3 md:space-x-4 justify-end pr-5">
+        <button onClick={() => volume > 0 && setVolume(volume - 10)}>
+          <VolumeDownIcon className="button" />
+        </button>
+        <input
+          className="w-14 md:w-28"
+          value={volume}
+          onChange={(e) => setVolume(Number(e.target.value))}
+          type="range"
+          min={0}
+          max={100}
+        />
+        <button onClick={() => volume < 100 && setVolume(volume + 10)}>
+          <VolumeUpIcon className="button " />
         </button>
       </div>
     </div>
