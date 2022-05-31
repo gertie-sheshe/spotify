@@ -9,3 +9,6 @@ npm run dev
 # or
 yarn dev
 ```
+
+## Demo
+[spotify2.gif](https://postimg.cc/jDyhBbFZ)
