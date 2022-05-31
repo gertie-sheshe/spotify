@@ -88,6 +88,7 @@ function Player() {
           <h3>{songInfo?.name}</h3>
           <p>{songInfo?.artists?.[0]?.name}</p>
         </div>
+        <HeartIcon className="h-5 w-5" />
       </div>
 
       <div className="flex items-center justify-evenly">
