@@ -11,4 +11,4 @@ yarn dev
 ```
 
 ## Demo
-[spotify2.gif](https://postimg.cc/jDyhBbFZ)
+[![spotify2.gif](https://i.postimg.cc/Qdyn9NkG/spotify2.gif)](https://postimg.cc/jDyhBbFZ)
